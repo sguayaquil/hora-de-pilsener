@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora de Pilsener</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5f3f 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a472a;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            color: #1a472a;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+        }
+
+        .message-container {
+            margin-top: 40px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .message {
+            font-size: 1.8em;
+            color: #1a472a;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease-in;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            margin-top: 30px;
+            animation: fadeIn 0.8s ease-in 0.3s both;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .message {
+                font-size: 1.4em;
+            }
+
+            button {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍺 Hora de Pilsener 🍺</h1>
+        <button onclick="mostrarMensaje()">¿Que hora es?</button>
+        
+        <div class="message-container">
+            <div id="mensaje" class="message hidden">
+                ¡Siempre es hora de una Pilsener!
+            </div>
+            <div id="imagenContainer" class="image-container hidden">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/f768eb32579085.568b4a32e0fac.jpg" alt="Pilsener">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensaje');
+            const imagenContainer = document.getElementById('imagenContainer');
+            
+            // Toggle visibility
+            if (mensaje.classList.contains('hidden')) {
+                mensaje.classList.remove('hidden');
+                imagenContainer.classList.remove('hidden');
+            } else {
+                mensaje.classList.add('hidden');
+                imagenContainer.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
