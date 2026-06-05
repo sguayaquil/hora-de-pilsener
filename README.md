@@ -1,5 +1,3 @@
-# Hora de Pilsener 🍺
-
 A fun, interactive GitHub Pages project with a button that displays a celebratory message and image.
 
 ## What it does
